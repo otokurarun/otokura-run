@@ -1,18 +1,14 @@
 <div class="info-contents">
   <section class="info-section">
     <h2>楽曲プレイリスト</h2>
-    <iframe class="yt-movie"
-      src=" https://www.youtube.com/embed?loop=1&listType=playlist&playlist=vctPgHMKQ-o,rxP-h-7CSPY,jxrEVf0QvqI,gW15pu80O6I,PUJpUotT-Kc"
-      title="YouTube video player" frameborder="0"
+    <iframe class="yt-movie" [src]="this.songVideoURL" title="YouTube video player" frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowfullscreen></iframe>
   </section>
 
   <section class="info-section">
     <h2>デレステMVプレイリスト</h2>
-    <iframe class="yt-movie"
-      src=" https://www.youtube.com/embed?loop=1&listType=playlist&playlist=atJPNDR0Zwo,ejVvxSL18Ko,srbIobd-ekI,_-AR53Z3tXM,uZuqmwhljVo"
-      title="YouTube video player" frameborder="0"
+    <iframe class="yt-movie" [src]="this.mvVideoURL" title="YouTube video player" frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowfullscreen></iframe>
   </section>
