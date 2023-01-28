@@ -16,7 +16,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 16
 
       - name: Install dependencies
         run: npm install
@@ -30,7 +30,7 @@ jobs:
           cp -r dist/*/ docs/
           cp docs/index.html docs/404.html
       - name: Upload app to gh-pages branch
-        uses: JamesIves/github-pages-deploy-action@830e6a4f7c81743c52f3fed0ac67428feff9620a
+        uses: JamesIves/github-pages-deploy-action@ba1486788b0490a235422264426c45848eac35c6
         with:
           branch: gh-pages
           folder: docs/
