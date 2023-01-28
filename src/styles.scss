@@ -9,9 +9,9 @@ body {
 body {
   margin: 0;
   font-family: "M PLUS Rounded 1c", "Helvetica Neue", sans-serif;
+  color: #333;
 }
 
 // Material Designのフォントをカスタマイズ
-$myapp-typography: mat.define-typography-config($font-family: "M PLUS Rounded 1c",
-);
+$myapp-typography: mat.define-typography-config($font-family: "'M PLUS Rounded 1c'");
 @include mat.core($myapp-typography);
