@@ -26,7 +26,7 @@ jobs:
       - name: Build app
         run: |
           REPOSITORY_NAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')
-          npm run build -- --deploy-url "/${REPOSITORY_NAME}/" --base-href "/${REPOSITORY_NAME}"
+          npm run build
           cp -r dist/*/ docs/
           cp docs/index.html docs/404.html
       - name: Upload app to gh-pages branch
