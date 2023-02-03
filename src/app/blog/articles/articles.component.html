@@ -1,0 +1,22 @@
+<section class="">
+
+</section>
+
+<div class="articles">
+  <ng-container *ngFor="let page of (links$ | async)">
+    <a [href]="page.route" class="article-card">
+      <div class="article-img">
+        <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+      </div>
+      <div class="article-title">
+        {{ page['title']}}
+      </div>
+      <div class="article-date">
+        {{ page['created_at'] | date : 'yyyy/MM/dd' }}
+      </div>
+      <!-- <p>
+        {{ page | json }}
+      </p> -->
+    </a>
+  </ng-container>
+</div>

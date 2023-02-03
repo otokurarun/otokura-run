@@ -6,17 +6,25 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from 'src/material.module';
 import { HomePageComponent } from './home-page/home-page.component';
+import { ScullyLibModule } from '@scullyio/ng-lib';
+import { ArticlesComponent } from './blog/articles/articles.component';
+import { BlogComponent } from './blog/blog.component';
+import { ArticleDetailComponent } from './blog/article-detail/article-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent
+    HomePageComponent,
+    BlogComponent,
+    ArticlesComponent,
+    ArticleDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    ScullyLibModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
