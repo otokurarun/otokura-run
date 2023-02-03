@@ -1,1 +1,16 @@
-<p>article-detail works!</p>
+<section class="article-section">
+  <ng-container *ngIf="(page$ | async) as page">
+
+    <div class="article-date">
+      {{ page['created_at'] | date : 'yyyy/MM/dd' }}
+    </div>
+
+    <h2 class="article-title">
+      {{ page['title']}}
+    </h2>
+
+    <!-- This is where Scully will inject the static HTML -->
+    <scully-content></scully-content>
+
+  </ng-container>
+</section>

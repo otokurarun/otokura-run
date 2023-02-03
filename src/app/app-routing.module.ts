@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ArticleDetailComponent } from './blog/article-detail/article-detail.component';
 import { ArticlesComponent } from './blog/articles/articles.component';
-import { BlogComponent } from './blog/blog.component';
 import { HomePageComponent } from './home-page/home-page.component';
 
 const routes: Routes = [
@@ -15,7 +15,7 @@ const routes: Routes = [
   },
   {
     path: 'blog/:slug',
-    component: BlogComponent,
+    component: ArticleDetailComponent,
   },
   {
     path: '**',
