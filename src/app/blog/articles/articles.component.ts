@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ScullyRoute, ScullyRoutesService } from '@scullyio/ng-lib';
 import { firstValueFrom } from 'rxjs';
 
@@ -11,6 +11,10 @@ export class ArticlesComponent implements OnInit {
 
   // ページのリスト
   public pages: ScullyRoute[] = [];
+
+  // 記事の表示件数
+  @Input()
+  public numOfMaxArticles: number = 999999;
 
   constructor(private scully: ScullyRoutesService) {
   }
@@ -39,9 +43,6 @@ export class ArticlesComponent implements OnInit {
       }
       return (pageB['number'] - pageA['number']);
     });
-
-    // 表示件数を絞る
-    pages = pages.slice(0, 3);
 
     // 反映
     this.pages = pages;
