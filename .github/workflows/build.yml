@@ -1,0 +1,30 @@
+name: Build
+
+on:
+  repository_dispatch:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    env:
+      ARTICLE_REPO: otokurarun/otokura-run-news
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+        with:
+          repository: ${{ env.ARTICLE_REPO }}
+          path: article-repo
+      - name: Move article files
+        run: |
+          mv article-repo/blog/ .
+          ls -l blog/
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - uses: cmgriffing/scully-gh-pages-action@7b77d24497dacdcf03e3f7fcf3efe6e5e0893cac
+        with:
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+          deploy-branch: gh-pages
