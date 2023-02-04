@@ -1,5 +1,5 @@
 <div class="articles">
-  <ng-container *ngFor="let page of (links$ | async)">
+  <ng-container *ngFor="let page of pages">
     <a [href]="page.route" class="article-card">
       <div class="article-img">
         <img *ngIf="page['imageUrls'] && page['imageUrls'].length >= 1" [src]="page['imageUrls'][0]">
