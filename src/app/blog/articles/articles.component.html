@@ -4,11 +4,13 @@
       <div class="article-img">
         <img *ngIf="page['imageUrls'] && page['imageUrls'].length >= 1" [src]="page['imageUrls'][0]">
       </div>
-      <div class="article-title">
-        {{ page['title']}}
-      </div>
-      <div class="article-date">
-        {{ page['created_at'] | date : 'yyyy/MM/dd' }}
+      <div class="article-caption">
+        <div class="article-date">
+          {{ page['created_at'] | date : 'yyyy/MM/dd' }}
+        </div>
+        <div class="article-title">
+          {{ page['title']}}
+        </div>
       </div>
     </a>
   </ng-container>
