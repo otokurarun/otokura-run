@@ -17,6 +17,7 @@ jobs:
         with:
           repository: ${{ env.ARTICLE_REPO }}
           path: article-repo
+          token: ${{ secrets.ACCESS_TOKEN }}
       - name: Move article files
         run: |
           mv article-repo/blog/ .
