@@ -20,6 +20,7 @@
     padding: 0 5px 10px;
     border-bottom: solid 2px #DBDBDB;
     letter-spacing: 0.1rem;
+    line-height: 1.4;
 
     @media screen and (max-width: 599px) {
       font-size: 1.4rem;
@@ -71,7 +72,9 @@
 
   img {
     display: block;
-    max-width: 400px;
+    max-width: 600px;
+    max-height: 400px;
+    object-fit: contain;
     width: 100%;
     margin: 0 auto 70px;
 
