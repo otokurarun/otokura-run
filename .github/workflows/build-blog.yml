@@ -5,6 +5,7 @@ on:
     branches:
       - master
       - blog
+      - link-esa
 
 jobs:
   build-blog:
