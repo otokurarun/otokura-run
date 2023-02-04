@@ -9,13 +9,30 @@ import { map, Observable } from 'rxjs';
 })
 export class ArticlesComponent implements OnInit {
   public links$ = this.scully.available$.pipe(
-    // ルートページを省く
-    map((pages) => pages?.filter((page) => {
-      if (page.route === '/' || page.route === '/blog') {
-        return false;
-      }
-      return true;
-    })),
+    map((pages) => {
+
+      // ルートページを省く
+      pages = pages?.filter((page) => {
+        if (page.route === '/' || page.route === '/blog') {
+          return false;
+        }
+
+        return true;
+      });
+
+      // 番号順にソート
+      pages = pages.sort((pageA, pageB) => {
+        if (pageA['number'] === undefined || pageB['number'] === undefined) {
+          return 0;
+        }
+        return (pageB['number'] - pageA['number']);
+      });
+
+      pages = pages.slice(0, 3);
+
+     return pages;
+
+  }),
   );
 
   constructor(private scully: ScullyRoutesService) {
