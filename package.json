@@ -28,6 +28,7 @@
     "@scullyio/scully": "^2.1.0",
     "@scullyio/scully-plugin-puppeteer": "^2.1.0",
     "rxjs": "~7.5.0",
+    "scully-plugin-esa": "github:mugifly/mugifly.github.io#library",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

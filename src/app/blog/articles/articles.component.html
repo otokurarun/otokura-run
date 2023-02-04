@@ -2,7 +2,7 @@
   <ng-container *ngFor="let page of (links$ | async)">
     <a [href]="page.route" class="article-card">
       <div class="article-img">
-        <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <img *ngIf="page['imageUrls'] && page['imageUrls'].length >= 1" [src]="page['imageUrls'][0]">
       </div>
       <div class="article-title">
         {{ page['title']}}
