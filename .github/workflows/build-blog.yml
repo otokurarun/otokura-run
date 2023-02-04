@@ -1,0 +1,28 @@
+name: Build Blog
+
+on:
+  push:
+    branches:
+      - master
+      - blog
+      - link-esa
+
+jobs:
+  build-blog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: master
+      - name: Fetch articles from blog directory of blog branch
+        run: |
+          git fetch
+          git checkout origin/blog -- blog
+          ls -l blog/
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - uses: cmgriffing/scully-gh-pages-action@7b77d24497dacdcf03e3f7fcf3efe6e5e0893cac
+        with:
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+          deploy-branch: gh-pages

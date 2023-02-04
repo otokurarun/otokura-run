@@ -1,0 +1,15 @@
+<div class="articles">
+  <ng-container *ngFor="let page of (links$ | async)">
+    <a [href]="page.route" class="article-card">
+      <div class="article-img">
+        <img *ngIf="page['imageUrls'] && page['imageUrls'].length >= 1" [src]="page['imageUrls'][0]">
+      </div>
+      <div class="article-title">
+        {{ page['title']}}
+      </div>
+      <div class="article-date">
+        {{ page['created_at'] | date : 'yyyy/MM/dd' }}
+      </div>
+    </a>
+  </ng-container>
+</div>

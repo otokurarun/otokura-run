@@ -1,0 +1,40 @@
+.articles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  .article-card {
+    width: calc((100% - (20px * 2)) / 3);
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px #0003;
+    display: block;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.1s ease-in-out;
+
+    @media screen and (max-width:599px) {
+      width: 100%;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    .article-img {
+      img {
+        width: 100%;
+      }
+    }
+
+    .article-title {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    .article-date {
+      margin-top: 5px;
+    }
+  }
+}
